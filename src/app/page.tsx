@@ -1,103 +1,78 @@
-import Image from "next/image";
+import Navbar from "@/components/Navbar";
 
 export default function Home() {
   return (
-    <div className="font-sans grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="font-mono list-inside list-decimal text-sm/6 text-center sm:text-left">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] font-mono font-semibold px-1 py-0.5 rounded">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
+    <div className="font-sans text-white">
+      {/* Top Benefits Bar */}
+      <div className="w-full border-b border-white/5 bg-[#0b0713]/80 backdrop-blur supports-[backdrop-filter]:bg-[#0b0713]/60">
+        <div className="mx-auto max-w-7xl px-4 md:py-3.5 text-xs sm:text-sm text-white/80">
+          <ul className="flex flex-wrap items-center justify-between gap-3">
+            <li className="flex items-center gap-2"><span className="opacity-90">Budget friendly</span><span className="opacity-30 hidden sm:inline">•</span></li>
+            <li className="opacity-90">No. 1 in Europe</li>
+            <li className="flex items-center gap-2"><span className="opacity-90">On your first order</span>
+              <span className="text-black font-semibold rounded-full bg-gradient-to-r from-[#ff5a68] to-[#ff976a] px-3 py-1">30% OFF</span>
+              <span className="opacity-30 hidden sm:inline">•</span>
+            </li>
+            <li className="opacity-90 hidden md:block">For all products buy now get the offer</li>
+            <li className="opacity-90">User Friendly</li>
+            <li className="opacity-90">24/7 Service</li>
+          </ul>
+        </div>
+      </div>
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+      {/* Hero Section: left text, right video (no overlap) */}
+  <main className="relative py-6 md:py-8 min-h-[820px] md:min-h-[900px] lg:min-h-[980px] overflow-hidden">
+        {/* Transparent Navbar floating above hero */}
+        <Navbar active="home" />
+
+        {/* Content */}
+        <div className="relative z-10 mx-auto max-w-[1600px] px-2 sm:px-3 md:px-4">
+          <div className="grid grid-cols-12 gap-5 md:gap-7 lg:gap-8 items-center">
+            {/* Left: Text */}
+            <div className="col-span-12 md:col-span-6 max-w-[820px]">
+              <h1 className="text-[48px] sm:text-[60px] md:text-[74px] lg:text-[84px] font-semibold leading-[1.05] tracking-tight">
+                <span className="block">Expert to</span>
+                <span className="block">Digitalise Your</span>
+                <span className="block text-transparent bg-clip-text bg-gradient-to-r from-violet-400 via-fuchsia-400 to-violet-500">Growth</span>
+              </h1>
+              <p className="mt-6 max-w-[680px] text-white/75 text-sm sm:text-base">
+                We are constantly growing or learning and improving. Enter your the
+                personal real estate sanctf uary, where finding the ideal home is
+              </p>
+              <div className="mt-9">
+                <a href="#" className="inline-flex items-center gap-3 rounded-full px-7 py-4 text-base sm:text-lg font-medium text-white bg-gradient-to-r from-[#6d31ff] via-[#8a2be2] to-[#b026ff] shadow-[0_0_36px_-10px_#8a2be2] ring-1 ring-white/10">
+                  <span className="inline-flex h-6 w-6 items-center justify-center rounded-md bg-white/10">✦</span>
+                  Explore Now
+                </a>
+              </div>
+            </div>
+
+            {/* Right: Animation constrained to right side */}
+            <div className="col-span-12 md:col-span-6 md:justify-self-end relative">
+              <div className="absolute -inset-10 -z-10 rounded-[40px] opacity-40 blur-2xl bg-[radial-gradient(800px_360px_at_75%_55%,rgba(168,85,247,0.18),transparent_60%)]" />
+              <div className="w-full md:w-[700px] lg:w-[820px] xl:w-[900px]">
+                <div className="overflow-hidden rounded-[28px]">
+                  {/* Prefer transparent GIF if available */}
+                  <img
+                    src="/material/Comp%201_4.gif"
+                    alt="Hero animation"
+                    className="h-full w-full object-contain aspect-[16/10]"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
+
+      {/* Floating chat button */}
+      <a
+        href="#"
+        aria-label="Chat"
+        className="fixed bottom-6 right-6 h-14 w-14 rounded-full grid place-items-center bg-gradient-to-br from-violet-500 to-fuchsia-500 shadow-[0_10px_30px_-10px_#a855f7] ring-1 ring-white/15"
+      >
+        <span className="text-2xl">🤖</span>
+      </a>
     </div>
   );
 }
