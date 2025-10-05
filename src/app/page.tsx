@@ -3,6 +3,9 @@ import ChatBot from "@/components/ChatBot";
 import BrandsTrustBar from "@/components/BrandsTrustBar";
 import ServicesSection from "@/components/ServicesSection";
 import DiscountBanner from "@/components/DiscountBanner";
+import LatestWorks from "@/components/LatestWorks";
+import WhyChooseUs from "@/components/WhyChooseUs";
+import HowItWorks from "@/components/HowItWorks";
 import Lottie from "@/components/Lottie";
 
 export default function Home() {
@@ -89,6 +92,59 @@ export default function Home() {
 
       {/* Our Services Section */}
       <ServicesSection />
+
+      {/* Latest Works Section */}
+      <LatestWorks />
+
+      {/* Why Choose Us Section */}
+      <WhyChooseUs />
+
+      {/* Full Width Video Section
+      <section className="relative w-full h-screen bg-black overflow-hidden">
+        <div className="absolute inset-0">
+          <img
+            src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2071&q=80"
+            alt="Metro Solver Team Collaboration - Office Environment"
+            className="w-full h-full object-cover cursor-pointer"
+          /> */}
+          
+          {/* Overlay for better text visibility */}
+          {/* <div className="absolute inset-0 bg-black/40"></div> */}
+          
+          {/* Play Button - Centered */}
+          {/* <div className="absolute inset-0 flex items-center justify-center">
+            <div className="bg-black/70 backdrop-blur-sm rounded-full p-8 hover:bg-black/80 transition-all duration-300 cursor-pointer group hover:scale-110">
+              <svg
+                className="w-20 h-20 md:w-24 md:h-24 lg:w-28 lg:h-28 text-white group-hover:text-purple-400 transition-colors"
+                fill="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path d="M8 5v14l11-7z"/>
+              </svg>
+            </div>
+          </div> */}
+
+          {/* Optional Text Overlay */}
+          {/* <div className="absolute bottom-8 left-8 right-8 text-center">
+            <h2 className="text-white text-2xl md:text-4xl lg:text-5xl font-bold mb-4">
+              See How We Work
+            </h2>
+            <p className="text-white/80 text-lg md:text-xl max-w-2xl mx-auto">
+              Watch our team in action and discover the Metro Solver difference
+            </p>
+          </div>
+
+          {/* Video Progress Indicators */}
+          {/* <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 flex gap-2">
+            <div className="w-3 h-3 bg-white/60 rounded-full"></div>
+            <div className="w-3 h-3 bg-white rounded-full"></div>
+            <div className="w-3 h-3 bg-white/60 rounded-full"></div>
+          </div>
+        </div>
+      </section> */}
+
+      {/* How It Works Section */}
+      <HowItWorks />
     </div>
   );
 }

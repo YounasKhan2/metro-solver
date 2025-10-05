@@ -110,7 +110,7 @@ export default function ServicesSection() {
   ];
 
   return (
-    <section className="w-full px-1 md:px-2 lg:px-3 bg-black py-16">
+    <section className="w-full px-1 md:px-2 lg:px-3 bg-gradient-to-t from-black via-purple-950 to-black py-20 overflow-hidden">
       <div className="mx-auto max-w-[95vw] lg:max-w-[90vw]">
         {/* Header */}
         <div className="text-center mb-16">

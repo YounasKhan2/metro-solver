@@ -42,3 +42,35 @@ body {
 .animate-scroll {
   animation: scroll 20s linear infinite;
 }
+
+/* Latest Works infinite scroll animations */
+@keyframes scroll-left {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes scroll-right {
+  0% {
+    transform: translateX(-50%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+.animate-scroll-left {
+  animation: scroll-left 30s linear infinite;
+}
+
+.animate-scroll-right {
+  animation: scroll-right 25s linear infinite;
+}
+
+.animate-scroll-left-delayed {
+  animation: scroll-left 28s linear infinite;
+  animation-delay: -5s;
+}
