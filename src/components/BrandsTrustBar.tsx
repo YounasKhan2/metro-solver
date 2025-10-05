@@ -11,7 +11,7 @@ export default function BrandsTrustBar() {
   ];
 
   return (
-    <div className="w-full py-8 md:py-12 bg-transparent overflow-hidden">
+    <div className="w-full md:py-5 bg-transparent overflow-hidden">
       <div className="relative">
         {/* Infinite scrolling container */}
         <div className="flex animate-scroll">
@@ -20,7 +20,7 @@ export default function BrandsTrustBar() {
             {brands.map((brand, index) => (
               <div
                 key={`first-${index}`}
-                className="flex items-center justify-center h-16 md:h-20 px-8 md:px-12 bg-white/5 backdrop-blur-sm rounded-2xl border border-white/10 hover:bg-white/10 transition-all duration-300 min-w-[180px] md:min-w-[220px]"
+                className="flex items-center justify-center h-10 md:h-16 px-8 md:px-12 bg-white/4 backdrop-blur-sm rounded-2xl transition-all duration-300 min-w-[180px] md:min-w-[220px]"
               >
                 {brand.logo === "luminus" && (
                   <div className="flex items-center gap-3">
@@ -64,7 +64,7 @@ export default function BrandsTrustBar() {
             {brands.map((brand, index) => (
               <div
                 key={`second-${index}`}
-                className="flex items-center justify-center h-16 md:h-20 px-8 md:px-12 bg-white/5 backdrop-blur-sm rounded-2xl border border-white/10 hover:bg-white/10 transition-all duration-300 min-w-[180px] md:min-w-[220px]"
+                className="flex items-center justify-center h-10 md:h-16 px-8 md:px-12 bg-white/4 backdrop-blur-sm rounded-2xl transition-all duration-300 min-w-[180px] md:min-w-[220px]"
               >
                 {brand.logo === "luminus" && (
                   <div className="flex items-center gap-3">

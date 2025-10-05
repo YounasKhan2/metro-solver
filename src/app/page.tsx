@@ -1,31 +1,32 @@
 import Navbar from "@/components/Navbar";
 import ChatBot from "@/components/ChatBot";
 import BrandsTrustBar from "@/components/BrandsTrustBar";
+import ServicesSection from "@/components/ServicesSection";
+import DiscountBanner from "@/components/DiscountBanner";
+import Lottie from "@/components/Lottie";
 
 export default function Home() {
   return (
     <div className="font-sans text-white">
       {/* Top Benefits Bar */}
       <div className="w-full border-b border-white/5 bg-[#0b0713]/80 backdrop-blur supports-[backdrop-filter]:bg-[#0b0713]/60">
-        <div className="mx-auto max-w-7xl px-4 md:py-3.5 text-xs sm:text-sm text-white/80">
+        <div className="w-full px-4 md:py-3.5 text-sm sm:text-base text-white/80">
           <ul className="flex flex-wrap items-center justify-between gap-3">
-            <li className="flex items-center gap-2"><span className="opacity-90">Budget friendly</span><span className="opacity-30 hidden sm:inline">•</span></li>
-            <li className="opacity-90">No. 1 in Europe</li>
+            <li className="flex items-center gap-2"><span className="opacity-90">Budget friendly</span><span className="opacity-30">•</span></li>
+            <li className="flex items-center gap-2"><span className="opacity-90">No. 1 in Europe</span><span className="opacity-30">•</span></li>
             <li className="flex items-center gap-2"><span className="opacity-90">On your first order</span>
               <span className="text-black font-semibold rounded-full bg-gradient-to-r from-[#ff5a68] to-[#ff976a] px-3 py-1">30% OFF</span>
-              <span className="opacity-30 hidden sm:inline">•</span>
-            </li>
-            <li className="opacity-90 hidden md:block">For all products buy now get the offer</li>
-            <li className="opacity-90">User Friendly</li>
+              <span className="opacity-30">•</span>For all products buy now get the offer</li>
+            <li className="flex items-center gap-2"><span className="opacity-90">User Friendly</span><span className="opacity-30">•</span></li>
             <li className="opacity-90">24/7 Service</li>
           </ul>
         </div>
       </div>
 
       {/* Hero Section: left text, right video (no overlap) */}
-  <main className="relative py-6 md:py-8 min-h-[820px] md:min-h-[900px] lg:min-h-[980px] overflow-hidden">
+  <main className="relative min-h-[500px] md:min-h-[550px] lg:min-h-[520px] overflow-hidden">
     {/* Hero background overlay to match design */}
-    <div className="pointer-events-none absolute inset-0 -z-10 bg-[radial-gradient(1200px_600px_at_20%_10%,rgba(147,51,234,0.18),transparent_60%),radial-gradient(900px_420px_at_90%_70%,rgba(236,72,153,0.14),transparent_60%)]" />
+    <div className="pointer-events-none absolute inset-0 -z-10 bg-[radial-gradient(1200px_600px_at_20%_10%,rgba(147,51,234,0.18),transparent_60%),radial-gradient(700px_420px_at_60%_50%,rgba(0,0,0,0.10),transparent_60%)]" />
         {/* Transparent Navbar floating above hero */}
         <Navbar active="home" />
 
@@ -37,7 +38,11 @@ export default function Home() {
               <h1 className="text-[48px] sm:text-[60px] md:text-[74px] lg:text-[84px] font-semibold leading-[1.05] tracking-tight">
                 <span className="block">Expert to</span>
                 <span className="block">Digitalise Your</span>
-                <span className="block text-transparent bg-clip-text bg-gradient-to-r from-violet-400 via-fuchsia-400 to-violet-500">Growth</span>
+                <img 
+                  src="/material/Frame 1229.gif" 
+                  alt="Growth" 
+                  className="inline-block h-[60px] sm:h-[75px] md:h-[95px] lg:h-[105px] object-contain"
+                />
               </h1>
               <p className="mt-6 max-w-[680px] text-white/75 text-sm sm:text-base">
                 We are constantly growing or learning and improving. Enter your the
@@ -51,21 +56,24 @@ export default function Home() {
               </div>
             </div>
 
-            {/* Right: Video constrained and blended on right side */}
+            {/* Right: Lottie animation constrained on right side */}
             <div className="col-span-12 md:col-span-6 md:justify-self-end relative">
-              <div className="w-full md:w-[820px] lg:w-[980px] xl:w-[1120px]">
+              <div className="w-full md:w-[720px] lg:w-[880px] xl:w-[1020px]">
                 <div className="relative">
                   {/* Backdrop gradient to blend with */}
-                  <div className="pointer-events-none absolute inset-0 -z-10 bg-[radial-gradient(900px_420px_at_80%_55%,rgba(168,85,247,0.18),transparent_60%)]" />
-                  <video
-                    src="/material/v.mp4"
-                    className="h-full w-full aspect-[16/10] object-cover mix-blend-screen opacity-95 brightness-90 contrast-[1.35] saturate-[1.6]"
-                    autoPlay
-                    loop
-                    muted
-                    playsInline
-                    controls={false}
-                  />
+                  <div className="pointer-events-none absolute inset-0 -z-10 bg-[radial-gradient(700px_420px_at_60%_50%,rgba(168,85,247,0.10),transparent_50%)]" />
+                                    <div className="h-full w-full aspect-[16/10] flex items-center justify-end">
+                    <Lottie
+                      src="/material/JSON.json"
+                      className="h-[480px] w-[600px] md:h-[550px] md:w-[700px] lg:h-[600px] lg:w-[750px]"
+                      autoplay={true}
+                      loop={true}
+                    />
+                  </div>
+                  {/* ChatBot positioned under animation */}
+                  <div className="absolute bottom-4 right-4 md:bottom-6 md:right-6">
+                    <ChatBot />
+                  </div>
                 </div>
               </div>
             </div>
@@ -76,8 +84,11 @@ export default function Home() {
       {/* Brands Trust Bar */}
       <BrandsTrustBar />
 
-      {/* Floating chat button */}
-      <ChatBot />
+      {/* Discount Banner */}
+      <DiscountBanner />
+
+      {/* Our Services Section */}
+      <ServicesSection />
     </div>
   );
 }

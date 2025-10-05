@@ -15,17 +15,15 @@ export default function Navbar({ active = "home" }: NavbarProps) {
       <div className="flex items-center justify-between">
         {/* Logo (GIF) with no background */}
         <a href="/" className="relative flex items-center gap-4">
-          <div className="h-[112px] w-[112px] grid place-items-center">
-            <Image
-              src="/material/Frame_1.gif"
-              alt="Metro Solver Logo"
-              width={96}
-              height={96}
-              unoptimized
-              className="h-24 w-24 object-contain"
-              priority
-            />
-          </div>
+          <Image
+            src="/material/Frame_1.gif"
+            alt="Metro Solver Logo"
+            width={96}
+            height={96}
+            unoptimized
+            className="h-24 w-24 object-contain"
+            priority
+          />
           <span className="sr-only">Metro Solver</span>
         </a>
 

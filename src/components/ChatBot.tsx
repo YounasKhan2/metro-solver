@@ -8,18 +8,18 @@ export default function ChatBot() {
 
   return (
     <>
-      {/* Floating chat button */}
+      {/* Chat button */}
       <button
         onClick={() => setIsChatOpen(!isChatOpen)}
         aria-label="Chat"
-        className="fixed bottom-6 right-6 h-20 w-20 rounded-full grid place-items-center hover:scale-110 transition-transform z-50"
+        className="relative h-16 w-16 rounded-full grid place-items-center hover:scale-110 transition-transform z-10"
       >
         <Image
-          src="/material/Frame%203.gif"
+          src="/material/Frame 3.gif"
           alt="Chat Bot"
-          width={32}
-          height={32}
-          className="h-24 w-24 object-contain"
+          width={64}
+          height={64}
+          className="h-16 w-16 object-contain"
           unoptimized
         />
       </button>
