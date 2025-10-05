@@ -21,7 +21,7 @@ export default function Home() {
       </div>
 
       {/* Hero Section: left text, right video (no overlap) */}
-  <main className="relative py-6 md:py-8 min-h-[820px] md:min-h-[900px] lg:min-h-[980px] overflow-hidden">
+  <main className="relative py-6 md:py-8 min-h-[820px] md:min-h-[900px] lg:min-h-[980px] overflow-hidden isolate">
         {/* Transparent Navbar floating above hero */}
         <Navbar active="home" />
 
@@ -47,18 +47,17 @@ export default function Home() {
               </div>
             </div>
 
-            {/* Right: Animation constrained to right side */}
+            {/* Right: Animation constrained to right side (blend to remove black bg) */}
             <div className="col-span-12 md:col-span-6 md:justify-self-end relative">
-              <div className="absolute -inset-10 -z-10 rounded-[40px] opacity-40 blur-2xl bg-[radial-gradient(800px_360px_at_75%_55%,rgba(168,85,247,0.18),transparent_60%)]" />
-              <div className="w-full md:w-[700px] lg:w-[820px] xl:w-[900px]">
-                <div className="overflow-hidden rounded-[28px]">
-                  {/* Prefer transparent GIF if available */}
-                  <img
-                    src="/material/Comp%201_4.gif"
-                    alt="Hero animation"
-                    className="h-full w-full object-contain aspect-[16/10]"
-                  />
-                </div>
+              {/* Purple glow background similar to design */}
+              <div className="absolute -inset-10 -z-10 rounded-[40px] opacity-50 blur-2xl bg-[radial-gradient(900px_420px_at_80%_55%,rgba(168,85,247,0.22),transparent_60%),radial-gradient(720px_380px_at_70%_70%,rgba(236,72,153,0.16),transparent_60%)]" />
+              <div className="w-full md:w-[820px] lg:w-[980px] xl:w-[1120px] 2xl:w-[1240px]">
+                {/* Use blend mode to visually remove black background of GIF */}
+                <img
+                  src="/material/Comp%201_4.gif"
+                  alt="Hero animation"
+                  className="block w-full h-auto select-none pointer-events-none mix-blend-screen brightness-125 contrast-110"
+                />
               </div>
             </div>
           </div>
