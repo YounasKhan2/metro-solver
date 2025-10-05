@@ -1,4 +1,6 @@
 import Navbar from "@/components/Navbar";
+import ChatBot from "@/components/ChatBot";
+import BrandsTrustBar from "@/components/BrandsTrustBar";
 
 export default function Home() {
   return (
@@ -21,7 +23,9 @@ export default function Home() {
       </div>
 
       {/* Hero Section: left text, right video (no overlap) */}
-  <main className="relative py-6 md:py-8 min-h-[820px] md:min-h-[900px] lg:min-h-[980px] overflow-hidden isolate">
+  <main className="relative py-6 md:py-8 min-h-[820px] md:min-h-[900px] lg:min-h-[980px] overflow-hidden">
+    {/* Hero background overlay to match design */}
+    <div className="pointer-events-none absolute inset-0 -z-10 bg-[radial-gradient(1200px_600px_at_20%_10%,rgba(147,51,234,0.18),transparent_60%),radial-gradient(900px_420px_at_90%_70%,rgba(236,72,153,0.14),transparent_60%)]" />
         {/* Transparent Navbar floating above hero */}
         <Navbar active="home" />
 
@@ -47,31 +51,33 @@ export default function Home() {
               </div>
             </div>
 
-            {/* Right: Animation constrained to right side (blend to remove black bg) */}
+            {/* Right: Video constrained and blended on right side */}
             <div className="col-span-12 md:col-span-6 md:justify-self-end relative">
-              {/* Purple glow background similar to design */}
-              <div className="absolute -inset-10 -z-10 rounded-[40px] opacity-50 blur-2xl bg-[radial-gradient(900px_420px_at_80%_55%,rgba(168,85,247,0.22),transparent_60%),radial-gradient(720px_380px_at_70%_70%,rgba(236,72,153,0.16),transparent_60%)]" />
-              <div className="w-full md:w-[820px] lg:w-[980px] xl:w-[1120px] 2xl:w-[1240px]">
-                {/* Use blend mode to visually remove black background of GIF */}
-                <img
-                  src="/material/Comp%201_4.gif"
-                  alt="Hero animation"
-                  className="block w-full h-auto select-none pointer-events-none mix-blend-screen brightness-125 contrast-110"
-                />
+              <div className="w-full md:w-[820px] lg:w-[980px] xl:w-[1120px]">
+                <div className="relative">
+                  {/* Backdrop gradient to blend with */}
+                  <div className="pointer-events-none absolute inset-0 -z-10 bg-[radial-gradient(900px_420px_at_80%_55%,rgba(168,85,247,0.18),transparent_60%)]" />
+                  <video
+                    src="/material/v.mp4"
+                    className="h-full w-full aspect-[16/10] object-cover mix-blend-screen opacity-95 brightness-90 contrast-[1.35] saturate-[1.6]"
+                    autoPlay
+                    loop
+                    muted
+                    playsInline
+                    controls={false}
+                  />
+                </div>
               </div>
             </div>
           </div>
         </div>
       </main>
 
+      {/* Brands Trust Bar */}
+      <BrandsTrustBar />
+
       {/* Floating chat button */}
-      <a
-        href="#"
-        aria-label="Chat"
-        className="fixed bottom-6 right-6 h-14 w-14 rounded-full grid place-items-center bg-gradient-to-br from-violet-500 to-fuchsia-500 shadow-[0_10px_30px_-10px_#a855f7] ring-1 ring-white/15"
-      >
-        <span className="text-2xl">🤖</span>
-      </a>
+      <ChatBot />
     </div>
   );
 }
