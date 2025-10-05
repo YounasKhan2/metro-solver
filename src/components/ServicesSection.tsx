@@ -110,53 +110,46 @@ export default function ServicesSection() {
   ];
 
   return (
-    <section className="w-full px-4 md:px-8 lg:px-12">
-      <div className="mx-auto max-w-7xl">
+    <section className="w-full px-1 md:px-2 lg:px-3 bg-black py-16">
+      <div className="mx-auto max-w-[95vw] lg:max-w-[90vw]">
         {/* Header */}
-        <div className="text-center mb-20">
-          <h2 className="text-white text-4xl md:text-6xl font-bold mb-6 tracking-tight">Our Services</h2>
-          <p className="text-white/60 text-lg md:text-xl max-w-3xl mx-auto leading-relaxed">
+        <div className="text-center mb-16">
+          <h2 className="text-white text-4xl md:text-5xl font-bold mb-6 tracking-tight">Our Services</h2>
+          <p className="text-white/60 text-base md:text-lg max-w-2xl mx-auto leading-relaxed">
             Enter your personal real estate sanctuary, where finding the ideal 
             home is effortless and comfortable with our assistance.
           </p>
         </div>
 
-        {/* Services Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
+        {/* Services Grid - Exactly 3 columns on medium+ screens */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 lg:gap-6">
           {services.map((service) => (
             <div
               key={service.id}
-              className="group relative overflow-hidden rounded-3xl p-8 transition-all duration-500 hover:scale-[1.02] cursor-pointer min-h-[320px] flex flex-col justify-between backdrop-blur-sm bg-white/[0.03] ring-1 ring-white/[0.08] hover:bg-gradient-to-br hover:from-violet-600/25 hover:to-fuchsia-600/25 hover:ring-violet-400/40 hover:shadow-2xl hover:shadow-violet-500/20"
+              className="group relative overflow-hidden rounded-2xl p-10 lg:p-12 transition-all duration-300 cursor-pointer h-[350px] lg:h-[400px] flex flex-col justify-between bg-gray-800/50 hover:bg-gradient-to-br hover:from-purple-600 hover:to-purple-700 hover:shadow-lg hover:shadow-purple-500/25"
             >
-              {/* Background glow for featured item */}
-              {service.featured && (
-                <div className="absolute inset-0 bg-gradient-to-br from-violet-600/10 to-fuchsia-600/10 blur-xl" />
-              )}
               
-              <div className="relative z-10 flex flex-col h-full">
+              <div className="flex flex-col h-full">
                 {/* Icon */}
                 <div className="mb-6">
-                  <div className="inline-flex h-14 w-14 items-center justify-center rounded-2xl bg-white/10 ring-1 ring-white/20 group-hover:bg-violet-500/30 group-hover:ring-violet-400/50 transition-all duration-500">
-                    <span className="text-3xl">{service.icon}</span>
+                  <div className="inline-flex h-16 w-16 lg:h-20 lg:w-20 items-center justify-center rounded-xl bg-white/10 transition-all duration-300">
+                    <span className="text-3xl lg:text-4xl">{service.icon}</span>
                   </div>
                 </div>
 
                 {/* Content */}
                 <div className="flex-1 flex flex-col">
-                  <h3 className="text-white text-xl font-bold mb-4 group-hover:text-white transition-colors leading-tight">
+                  <h3 className="text-white text-xl lg:text-2xl font-semibold mb-4 lg:mb-5 leading-tight">
                     {service.title}
                   </h3>
                   
-                  <p className="text-white/50 text-sm leading-relaxed mb-6 group-hover:text-white/70 transition-colors flex-1">
+                  <p className="text-white/70 text-base lg:text-lg leading-relaxed mb-6 flex-1">
                     {service.description}
                   </p>
 
                   {/* Read More Link */}
-                  <button className="text-violet-400 hover:text-violet-300 text-sm font-semibold flex items-center gap-2 group-hover:gap-3 transition-all self-start">
-                    Read More
-                    <svg className="h-4 w-4 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                    </svg>
+                  <button className="text-blue-400 hover:text-blue-300 text-base lg:text-lg font-medium flex items-center gap-2 transition-all self-start">
+                    Read More →
                   </button>
                 </div>
               </div>

@@ -7,7 +7,7 @@ import Lottie from "@/components/Lottie";
 
 export default function Home() {
   return (
-    <div className="font-sans text-white">
+    <div className="font-sans text-white overflow-x-hidden">
       {/* Top Benefits Bar */}
       <div className="w-full border-b border-white/5 bg-[#0b0713]/80 backdrop-blur supports-[backdrop-filter]:bg-[#0b0713]/60">
         <div className="w-full px-4 md:py-3.5 text-sm sm:text-base text-white/80">
@@ -24,7 +24,7 @@ export default function Home() {
       </div>
 
       {/* Hero Section: left text, right video (no overlap) */}
-  <main className="relative min-h-[500px] md:min-h-[550px] lg:min-h-[520px] overflow-hidden">
+  <main className="relative min-h-[500px] md:min-h-[550px] lg:min-h-[520px] overflow-hidden bg-black">
     {/* Hero background overlay to match design */}
     <div className="pointer-events-none absolute inset-0 -z-10 bg-[radial-gradient(1200px_600px_at_20%_10%,rgba(147,51,234,0.18),transparent_60%),radial-gradient(700px_420px_at_60%_50%,rgba(0,0,0,0.10),transparent_60%)]" />
         {/* Transparent Navbar floating above hero */}

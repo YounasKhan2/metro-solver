@@ -13,15 +13,17 @@ export default function Navbar({ active = "home" }: NavbarProps) {
   return (
   <div className="relative z-10 mx-auto max-w-[1600px] px-3 sm:px-6 pt-2 md:pt-2">
       <div className="flex items-center justify-between">
-        {/* Logo (GIF) with no background */}
+        {/* Logo (GIF) with gradient background */}
         <a href="/" className="relative flex items-center gap-4">
+          {/* Larger gradient background in top left corner */}
+          <div className="absolute -left-8 -top-8 w-48 h-48 bg-gradient-to-br from-violet-500/25 via-purple-500/20 to-transparent rounded-full blur-2xl -z-10"></div>
           <Image
             src="/material/Frame_1.gif"
             alt="Metro Solver Logo"
             width={96}
             height={96}
             unoptimized
-            className="h-24 w-24 object-contain"
+            className="h-24 w-24 object-contain relative z-10"
             priority
           />
           <span className="sr-only">Metro Solver</span>

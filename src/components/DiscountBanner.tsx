@@ -8,10 +8,10 @@ export default function DiscountBanner() {
   if (!isVisible) return null;
 
   return (
-    <div className="w-full flex ml-24 relative height-[100px] width-[400px]">
-      <div className="relative">
+    <div className="w-full bg-black">
+      <div className="relative ml-24">
         {/* Discount Button */}
-        <button className="bg-[#2a2a2a] hover:bg-[#333333] text-white px-10 py-6 rounded-lg flex items-center gap-3 transition-all duration-300 ring-1 ring-white/10 hover:ring-white/20">
+        <button className="bg-black text-white px-10 py-6 rounded-lg flex items-center gap-3 transition-all duration-300 ring-1 ring-white/10 hover:ring-white/20">
           <span className="text-sm font-medium">Get My 15% OFF</span>
         </button>
         

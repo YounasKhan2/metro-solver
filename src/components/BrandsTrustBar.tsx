@@ -11,8 +11,10 @@ export default function BrandsTrustBar() {
   ];
 
   return (
-    <div className="w-full md:py-5 bg-transparent overflow-hidden">
-      <div className="relative">
+    <div className="w-full md:py-5 bg-black relative overflow-hidden">
+      {/* Dark gradient background */}
+      <div className="absolute inset-0 bg-gradient-to-r from-violet-900/20 via-purple-900/15 to-violet-900/20 -z-10"></div>
+      <div className="relative overflow-hidden">
         {/* Infinite scrolling container */}
         <div className="flex animate-scroll">
           {/* First set of brands */}
